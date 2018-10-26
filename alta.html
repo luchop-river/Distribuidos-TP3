@@ -18,6 +18,7 @@
         </ul>
       </div>
       <div id="content" >
+      <h2> Crear sesion </h2>
       <form action=/cgi-bin/punto2/alta.py method="post">
           Nombre y Apellido:<br>
           <input type="text" name="nombre" placeholder="Nombre y Apellido"/
@@ -33,7 +34,8 @@
           Edad:<br>
           <input type="number" name="edad" min="1" max="99" required><br><br>
           Password:<br>
-          <input type="password" name="password" required><br><br>
+          <input type="password" name="password" placeholder="Ingresa clave"
+                                                  required><br><br>
           <input type="submit" value="Aceptar">
           <input type="reset" value="Limpiar">
       </form>
