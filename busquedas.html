@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sistemas Distribuidos</title>
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+  </head>
+  <body>
+    <div id="header" align="center">
+      <h1> Sistema de gestion de alumnos</h1>
+    </div>
+    <div class="container">
+      <div id="sidebar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="alta.html">Alta</a></li>
+          <li><a href="modificacion.html">Modificacion</a></li>
+        </ul>
+      </div>
+      <div id="content" >
+        <h2>Busquedas</h2>
+          <p style="color:red;">(usar "*" para buscar coincidencias textuales
+          y usar "-" para separar intervalos numericos). Sexo=[ hombre |
+          mujer ]</p>
+        <form action=/cgi-bin/punto2/busquedas.py method="post">
+          <input type="radio" name="campo" value="nombre" checked>
+          nombre</input>
+          <input type="radio" name="campo" value="legajo">legajo</option>
+          <input type="radio" name="campo" value="sexo">sexo</option>
+          <input type="radio" name="campo" value="edad">edad</option>
+          <p>Buscar:</p>
+          <input type="text" name="buscar" placeholder="Juan Per*"
+                                           required><br><br>
+         <input type="submit" value="Aceptar">
+         <input type="reset" value="Limpiar">
+        </form>
+      </div>
+    </div>
+    <div align="center">
+      <footer class="footer" id="footer">
+        <p> Sistemas Distribuidos  - Aranda Perdomo</p>
+      </footer>
+    </div>
+  </body>
+</html>
+
