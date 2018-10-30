@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sistemas Distribuidos</title>
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+  </head>
+  <body>
+    <div id="header" align="center">
+      <h1> Sistema de gestion de alumnos</h1>
+    </div>
+    <div class="container">
+      <div id="sidebar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="alta.html">Alta</a></li>
+          <li><a href="login.html">Modificacion</a></li>
+          <li><a href="busquedas.html">Busquedas</a></li>
+          <li><a href="listas.html">Totales</a></li>
+        </ul>
+      </div>
+      <div id="content" >
+        <h2>Totales</h2>
+        <form action=/cgi-bin/punto2/listas.py method="post">
+          <br>Seleccione el rango de edad:<br>
+          <select name="intervalo" size=3 required>
+            <option value="primer_grupo">Menores de 20</option>
+            <option value="segundo_grupo">20-40</option>
+            <option value="tercer_grupo">Mayores de 40</option>
+          </select>
+          <br><br>
+          Sexo:<br>
+          <select name="sexo" size="2" required>
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+          </select><br><br>
+         <input type="submit" value="Aceptar">
+        </form>
+      </div>
+    </div>
+    <div align="center">
+      <footer class="footer" id="footer">
+        <p> Sistemas Distribuidos  - Aranda Perdomo</p>
+      </footer>
+    </div>
+  </body>
+</html>
+
