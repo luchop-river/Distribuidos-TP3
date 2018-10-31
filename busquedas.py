@@ -18,6 +18,8 @@ head_html = '''
   <head>
     <meta charset="UTF-8">
     <title>Sistemas Distribuidos</title>
+    <link rel="stylesheet" href="http://localhost/punto2/css/main.css"
+        type="text/css">
   </head>
   <body>
     <div id="header" align="center">
@@ -30,14 +32,25 @@ head_html = '''
           <li><a href="http://localhost/punto2/alta.html">Alta</a></li>
           <li><a href="http://localhost/punto2/login.html">
                             Modificacion</a></li>
+          <li><a href="http://localhost/punto2/busquedas.html">Busquedas</a>
+          </li>
+          <li><a href="http://localhost/punto2/listas.html">Totales</a></li>
         </ul>
       </div>
       <div id="content" >
+        <table>
+          <tr>
+            <th>Nombre</th>
+            <th>Legajo</th>
+            <th>Sexo</th>
+            <th>Edad</th>
+          </tr>
 '''
 
 
 footer_html = '''
-      </div>
+      </table>
+    </div>
     <div align="center">
       <footer class="footer" id="footer">
         <p> Sistemas Distribuidos  - Aranda Perdomo</p>
@@ -49,11 +62,15 @@ footer_html = '''
 '''
 
 encontre_html = '''
-<p>%s | %s | %s | %s | %s</p>
+<tr>
+<td>%s</td>
+<td>%s</td>
+<td>%s</td>
+<td>%s</td>
+</tr>
 '''
 
 no_encontre_html = '''
-<p> No se encontraron resultados </p>
 '''
 
 select_sql = '''
@@ -177,9 +194,7 @@ def show_html(registro):
         legajo = registro[1]
         sexo = registro[2]
         edad = registro[3]
-        password = registro[4]
-        print(encontre_html % (nombre, legajo, sexo, edad, password))
-        # print(encontre_html % (nombre))
+        print(encontre_html % (nombre, legajo, sexo, edad))
 
 
 def main():

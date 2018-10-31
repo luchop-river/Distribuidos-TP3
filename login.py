@@ -20,7 +20,8 @@ head_html = '''
   <head>
     <meta charset="UTF-8">
     <title>Sistemas Distribuidos</title>
-    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="http://localhost/punto2/css/main.css"
+        type="text/css">
   </head>
   <body>
     <div id="header" align="center">
@@ -29,9 +30,13 @@ head_html = '''
     <div class="container">
       <div id="sidebar">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="alta.html">Alta</a></li>
-          <li><a href="modificacion.html">Modificacion</a></li>
+          <li><a href="http://localhost/punto2/index.html">Home</a></li>
+          <li><a href="http://localhost/punto2/alta.html">Alta</a></li>
+          <li><a href="http://localhost/punto2/login.html">
+                            Modificacion</a></li>
+          <li><a href="http://localhost/punto2/busquedas.html">Busquedas</a>
+          </li>
+          <li><a href="http://localhost/punto2/listas.html">Totales</a></li>
         </ul>
       </div>
       <div id="content" >

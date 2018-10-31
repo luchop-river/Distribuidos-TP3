@@ -19,22 +19,8 @@ head_html = '''
   <head>
     <meta charset="UTF-8">
     <title>Sistemas Distribuidos</title>
-    <style>
-        table {
-        font-family: "Lato", sans-serif;
-        text-align: center;
-        border-collapse: collapse;
-        width: 100%;
-        }
-
-        td, th {
-        background-color: #555555;
-        text-align: center;
-        padding: 8px;
-        color:#fff;
-        }
-
-    </style>
+    <link rel="stylesheet" href="http://localhost/punto2/css/main.css"
+        type="text/css">
   </head>
   <body>
     <div id="header" align="center">
@@ -47,6 +33,8 @@ head_html = '''
           <li><a href="http://localhost/punto2/alta.html">Alta</a></li>
           <li><a href="http://localhost/punto2/login.html">
                             Modificacion</a></li>
+          <li><a href="http://localhost/punto2/busquedas.html">Busquedas</a>
+          </li>
           <li><a href="http://localhost/punto2/listas.html">Totales</a></li>
         </ul>
       </div>
