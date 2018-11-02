@@ -72,6 +72,7 @@ h2 {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  cursor:default;
 }
 .topnav a.active {
   border-bottom:#FE5010;
@@ -102,56 +103,106 @@ width:80%;
 margin-bottom: 7px;
 }
 
+.modal{
+  display:none;
+  position:fixed;
+  background-color: rgba(0,0,0,0.4); 
+  width: 100%;
+  height:100%;
+  left: 0;
+  top: 0;
+  padding: 20px;
+  border: 1px solid #888;
+  overflow:auto;
+}
+
+.modal-content {
+    background-color: #ffb84d;
+    margin: 5% auto 15% auto;
+    padding: 20px;
+    border: 1px solid #333;
+    width: 80%;
+}
+
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color:orange;
+  font-size: 35px;
+  font-weight: bold;
+}
+.close:hover,.close:focus{
+  color:#FE5010;
+  cursor: pointer;
+}
+
+input[type=submit] {
+  font-family: "Montserrat", sans-serif;
+  color:orange;
+  background-color: #333;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+input[type=submit]:hover {
+  opacity: 0.8;
+  cursor:pointer;
+}
+
     </style>
     <script type = "text/javascript">
       function getReqObj() {
-                        var XMLHttpRequestObject;
-                        if (window.XMLHttpRequest) {
-                             XMLHttpRequestObject = new XMLHttpRequest();
-                        } else if (window.ActiveXObject) {
-                            XMLHttpRequestObject = new ActiveXObject("Microsoft.XMLHTTP");
+                        var XMLHttpRequestObject; 
+                        if (window.XMLHttpRequest) { 
+                             XMLHttpRequestObject = new XMLHttpRequest(); 
+                        } else if (window.ActiveXObject) { 
+                            XMLHttpRequestObject = new ActiveXObject("Microsoft.XMLHTTP"); 
                         }
-                       return XMLHttpRequestObject;
+                       return XMLHttpRequestObject; 
                     }
-      function submitHandler(txtID, divID)
+      function submitHandler(txtID, divID) 
                     {
                 var theText = document.getElementById(txtID);
                 var theArea = document.getElementById(divID);
                 var reqObj = getReqObj();
                 var url="/cgi-bin/punto5/textchat?newtxt=" + escape("<p>" + theText.value + "</p>");
                 reqObj.open("GET", url, false);
-                reqObj.send(null);
+                reqObj.send(null); 
                 theArea.innerHTML = unescape(reqObj.responseText);
                 theArea.scrollTop = theArea.scrollHeight;
                 theText.value = "";
                 return false;
       }
-          window.onload=function()
-                    {
-                       document.forms[0][0].focus();
-                    }
+  window.onload=function()
+  {
+    document.forms[0][0].focus();
+  } 
+
     </script>
     </head>
     <body>
-      <div>
         <h1>Sistemas Distrbuidos</h1>
         <div class="header">
           <div class="navbar">
-            <a href="login.html">Login</a>
-            <a href='logout.html'>Logout</a>
-            <a href='logout.html'>Exit</a>
-          </ul>
+            <a onclick="document.getElementById('loginmodal').style.display='block'" style="width:auto;">Login</a>
+            <a> Log Out</a>
+            <a>Sign Up</a>
         </div>
       </div>
       <div class="container">
         <div class="row">
           <div class="rightcolumn">
             <h2>Chat Sistemas Distribuidos!</h2>
-            <div id="targetDiv">
-            </div>
-            <br> <br>
+            <div id="targetDiv"></div>
             <div>
-              <form name="forinput" onsubmit="return submitHandler('usrText', 'targetDiv')">
+              <form name="forinput" onsubmit="return submitHandler('usrText','targetDiv')">
                 <input type="text" placeholder="Ingrese Texto" id="usrText" >
               </form>
             </div>
@@ -168,6 +219,24 @@ margin-bottom: 7px;
         </footer>
       </div>
 
+      <div id="loginmodal" class="modal">
+        <div class="modal-content">
+          <h1>Login</h1>
+          <span onclick="document.getElementById('loginmodal').style.display=
+                'none'" class="close" title="Close">&times;</span>
+          <form id="loginform" name="loginform" method="post" 
+                                                action="index.html">
+            <label for="username">Username:</label>
+            <input type="text" name="username" placeholder="Nombre de usuario"
+                                               required>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="Ingrese password" required >
+            <br>
+            <input type="submit" name="login-btn" id="login-btn" value="Login"
+                                                                align="center">
+          </form>
+        </div>
+      </div>
 
     </body>
     </html>
