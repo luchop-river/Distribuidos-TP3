@@ -80,7 +80,7 @@ modificar_html = '''
           <br><br>
           Numero de Alumno/Legajo:<br>
           <input type="text" name="legajo" placeholder="9999999"/
-                            value="%s" max="9999999" required disabled><br><br>
+                            value="%s" max="9999999" required readonly><br><br>
           Sexo:<br>
           <select name="sexo" size="2">
             "%s"
